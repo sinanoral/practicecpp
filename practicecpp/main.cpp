@@ -1,7 +1,17 @@
 #include <iostream>
 #include "main.h"
 
-int main()
+int(*func())(const char *, const char *)
+{
+	return &strcmp;
+}
+
+void print(int a = 5, int b = 4)
+{
+	std::cout << a << " " << b << "\n";
+}
+
+auto main() -> int
 {
 	//constexpr belirteci ile tanimslanimis bir degiskene
 	//a -> ilk deger vermek zorunlu.
@@ -11,8 +21,5 @@ int main()
 	//constexpr ==> degisken
 	//constexpr ==> fonksiyon
 
-	const int x = 1;
-	const int y = 3;
-	constexpr int prime = isprime(factorial(ndigit(sum_square(x, y))));
-
+	print(4);
 }
